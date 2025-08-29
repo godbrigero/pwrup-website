@@ -44,13 +44,13 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-[300dvh]">
+    <main className="min-h-[300dvh] overflow-hidden overflow-x-hidden">
       <section ref={heroRef} className="relative h-[200dvh]">
         <LogoPageContainer>
           <LargeText ref={titleRef}>PWRUP</LargeText>
         </LogoPageContainer>
       </section>
-      <section className="h-dvh w-full flex items-center justify-center">
+      <section className="h-dvh flex items-center justify-center">
         <QuoteWBorder
           title='"Impossible is a word to be found only in the dictionary of fools."'
           subtitle="— Napoleon Bonaparte"

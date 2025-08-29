@@ -8,7 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-black scrollbar-hide overflow-x-hidden">
+      <body className="bg-black">
         <header className="fixed top-0 left-0 right-0 z-50 p-6 mx-5">
           <NavMenu />
         </header>
