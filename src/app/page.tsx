@@ -1,6 +1,7 @@
 "use client";
 
 import { LargeText, LogoPageContainer } from "@/components/PwrupLogo";
+import { NextSlideText } from "@/components/NextSlideText";
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -26,10 +27,17 @@ export default function Home() {
         },
       });
 
-      // Animate to target by 60% of the scroll, then hold
       tl.to(
         titleRef.current,
-        { scale: 2.5, x: 750, ease: "back", duration: 0.6 },
+        { scale: 2.5, xPercent: 40, ease: "back", duration: 0.6 },
+        0
+      );
+
+      tl.to(document.body, { backgroundColor: "#00ff41", ease: "none" }, 0);
+
+      tl.to(
+        titleRef.current,
+        { scale: 2.5, xPercent: 40, ease: "back", duration: 0.6 },
         0
       );
     }, heroRef);
@@ -44,6 +52,15 @@ export default function Home() {
           <LogoPageContainer>
             <LargeText ref={titleRef}>PWRUP</LargeText>
           </LogoPageContainer>
+        </section>
+        <section className="h-dvh w-full flex items-center justify-center">
+          <div className="w-fit">
+            <NextSlideText
+              title='"Impossible is a word to be found only in the dictionary of fools."'
+              subtitle="— Napoleon Bonaparte"
+              className="text-black"
+            />
+          </div>
         </section>
       </main>
     </SmoothScrollProvider>
