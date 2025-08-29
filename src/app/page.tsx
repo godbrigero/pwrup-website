@@ -1,7 +1,7 @@
 "use client";
 
 import { LargeText, LogoPageContainer } from "@/components/PwrupLogo";
-import { NextSlideText } from "@/components/NextSlideText";
+import { QuoteWBorder } from "@/components/Quotes";
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -44,22 +44,18 @@ export default function Home() {
   }, []);
 
   return (
-    <SmoothScrollProvider>
-      <main className="min-h-[300dvh]">
-        <section ref={heroRef} className="relative h-[200dvh]">
-          <LogoPageContainer>
-            <LargeText ref={titleRef}>PWRUP</LargeText>
-          </LogoPageContainer>
-        </section>
-        <section className="h-dvh w-full flex items-center justify-center">
-          <div className="w-fit">
-            <NextSlideText
-              title='"Impossible is a word to be found only in the dictionary of fools."'
-              subtitle="— Napoleon Bonaparte"
-            />
-          </div>
-        </section>
-      </main>
-    </SmoothScrollProvider>
+    <main className="min-h-[300dvh]">
+      <section ref={heroRef} className="relative h-[200dvh]">
+        <LogoPageContainer>
+          <LargeText ref={titleRef}>PWRUP</LargeText>
+        </LogoPageContainer>
+      </section>
+      <section className="h-dvh w-full flex items-center justify-center">
+        <QuoteWBorder
+          title='"Impossible is a word to be found only in the dictionary of fools."'
+          subtitle="— Napoleon Bonaparte"
+        />
+      </section>
+    </main>
   );
 }

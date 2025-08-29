@@ -61,7 +61,7 @@ export const LargeText = forwardRef<
         }}
         style={{
           textShadow: shadow,
-          WebkitTextStroke: "2px rgba(255,255,255,0.30)",
+          WebkitTextStroke: "2px rgba(255,255,255,0.3)",
           cursor: "default",
           ...props.style,
         }}
