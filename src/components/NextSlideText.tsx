@@ -10,7 +10,7 @@ export function NextSlideText(props: {
   return (
     <LazyMotion features={domAnimation} strict>
       <m.div
-        className={`flex flex-col items-center text-center gap-6 w-fit mx-16 ${
+        className={`flex flex-col items-center text-center w-fit mx-16 ${
           props.className ?? ""
         }`}
         initial={{ opacity: 0, y: 24 }}
@@ -18,11 +18,11 @@ export function NextSlideText(props: {
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <h2 className="text-4xl md:text-6xl font-bold text-black-50">
+        <h2 className="text-4xl md:text-6xl font-bold text-white">
           {props.title}
         </h2>
         {props.subtitle ? (
-          <p className="text-base md:text-xl text-black/70">{props.subtitle}</p>
+          <p className="text-base md:text-xl text-white/70">{props.subtitle}</p>
         ) : null}
       </m.div>
     </LazyMotion>

@@ -33,8 +33,6 @@ export default function Home() {
         0
       );
 
-      tl.to(document.body, { backgroundColor: "#00ff41", ease: "none" }, 0);
-
       tl.to(
         titleRef.current,
         { scale: 2.5, xPercent: 40, ease: "back", duration: 0.6 },
@@ -58,7 +56,6 @@ export default function Home() {
             <NextSlideText
               title='"Impossible is a word to be found only in the dictionary of fools."'
               subtitle="— Napoleon Bonaparte"
-              className="text-black"
             />
           </div>
         </section>
