@@ -10,7 +10,7 @@ export function NavMenu() {
       <a
         key={links[0].href}
         href={links[0].href}
-        className="text-lg font-medium text-white hover:text-gray-300 transition-colors"
+        className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
       >
         {links[0].label}
       </a>
@@ -19,7 +19,7 @@ export function NavMenu() {
           <a
             key={link.href}
             href={link.href}
-            className="text-lg font-medium text-white hover:text-gray-300 transition-colors"
+            className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
           >
             {link.label}
           </a>
