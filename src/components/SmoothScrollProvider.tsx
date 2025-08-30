@@ -11,6 +11,7 @@ export function SmoothScrollProvider(props: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
+    ScrollTrigger.config({ ignoreMobileResize: true });
     // Make the scroll much faster by reducing duration and using a snappier easing
     const lenis = new Lenis({
       duration: 0.4, // Lower duration for faster scroll (default is 1)
@@ -19,22 +20,7 @@ export function SmoothScrollProvider(props: { children: React.ReactNode }) {
     });
     lenisRef.current = lenis;
 
-    ScrollTrigger.scrollerProxy(document.documentElement, {
-      scrollTop(value) {
-        if (arguments.length && typeof value === "number") {
-          lenis.scrollTo(value);
-        }
-        return window.scrollY || window.pageYOffset;
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-    });
+    // Using native document scrolling with Lenis; no scrollerProxy needed
 
     const onScroll = () => {
       ScrollTrigger.update();

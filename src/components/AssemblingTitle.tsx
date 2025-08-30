@@ -113,13 +113,9 @@ export function AssemblingTitle(props: AssemblingTitleProps) {
       );
     });
 
-    const onResize = () => ScrollTrigger.refresh();
-    window.addEventListener("resize", onResize);
-
     return () => {
       tl.scrollTrigger?.kill();
       tl.kill();
-      window.removeEventListener("resize", onResize);
     };
   }, [
     targets,
@@ -156,12 +152,10 @@ export function AssemblingTitle(props: AssemblingTitleProps) {
           offsetY.set(0);
         }}
         style={{
-          // Use a more defined, brighter stroke with a subtle glow
           WebkitTextStroke: "3px #00ff99",
-          textShadow: [
-            "0 0 6px #00ff99", // subtle glow around the stroke
-            shadow as unknown as string,
-          ].join(", "),
+          textShadow: ["0 0 6px #00ff99", shadow as unknown as string].join(
+            ", "
+          ),
         }}
       >
         {letters.map((char, idx) => (
